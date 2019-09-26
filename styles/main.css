@@ -1,0 +1,305 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Open Sans', 'Century Gothic';
+}
+
+:root{
+	--native-color: radial-gradient(ellipse at bottom left,  rgb(9, 20, 46, 0.9) 5%, rgb(3, 9, 23, 1)), url('../images/noise2.png');
+	--gen-color: #fff;
+	--muses: rgb(0, 255, 149);
+	/*TO DO -- search out why font-family is not working with variable*/
+	--muses-works: 'consolas',#00FFFF, none;
+	--line-about: #0045AD;
+}
+html{
+	background: var(--native-color, black);
+	background-repeat: repeat;
+	background-position: center center;
+	color: var(--gen-color, green);
+}
+
+header{
+	position: relative;
+	height: 100px;
+	border-bottom: solid 10px var(--line-about);
+	text-align: center;
+	padding: 24px 0px;
+}
+
+#app-name, #app-inpsiration{
+	font-size: 2.5em;
+	font-weight: bold;
+}
+
+.muse{
+	color: var(--muses);
+}
+
+.muse-works{
+	color: var(--muses-works);
+	text-decoration: var(--muses-works);
+	font-family: var(--muses-works) !important;
+	word-spacing: 10px;
+	letter-spacing: 1px;
+}
+
+.muse-works:hover{
+	text-decoration: underline;
+}
+
+#about-mark{
+	width: 25px;
+	height:25px;
+	display: inline-block;
+	position: absolute;
+	top: 30px;
+	right: 25px;
+	background-color: var(--line-about);
+	border-radius: 50px;
+	cursor: pointer;
+	font-weight: bolder;
+	color: rgb(255, 255, 255);
+	box-shadow: -2px 3px 0px 1px  black;
+	font-size: 1rem;
+	font-style: normal;
+	z-index: 100;
+	transition: 0.4s all;
+	overflow: hidden;
+}
+
+#about-mark:hover{
+	height: 10em;
+	width: 22em;
+	padding: 20px 20px 40px 20px;
+	border-radius: 2px;
+	box-shadow: -2px 3px 100px 10px  black;
+	background: linear-gradient(230deg, rgb(2, 53, 131)45%, rgb(24, 96, 204));
+}
+
+.about-app{
+	display: none;
+	float: right;
+	text-align: left;
+	width: inherit;
+	margin-top: 20px;
+	font-style: normal;
+	font-size: 12px;
+	font-weight: lighter;
+}
+
+#about-mark:hover .about-app{
+	display: block;
+}
+
+[note]{
+	float: right;
+	margin: 6px 6px 0px 0px;
+	width: 13px;
+	height: 13px;
+	background-color: #fff;
+	border-radius: 50%;
+	box-shadow: 0px 0px 10px 0px rgb(0, 0, 0, 0.4);
+}
+
+#about-mark:hover [note]{
+	margin: 10px 10px 0px 0px;
+	border-radius: 10px;
+	box-shadow: -2px 3px 100px 10px  black;
+}
+
+#about-mark h2{
+	width: 100%;
+	border-bottom: 1px solid white;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+}
+
+[sub-inspire]{
+	display: inline-block;
+	margin-top: 30px;
+	text-align: center;
+	width: 100%;
+}
+
+main{
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-column-gap: 3rem;
+	grid-row-gap: 3rem;
+	justify-content: center;
+	padding: 2em;
+	/*border: 1px solid green;*/
+}
+
+.applet-card{
+	position: relative;
+	width: 250px;
+	height: 300px;
+	background-color: #091537;
+	box-shadow: 0px 0px 15px 1px rgb(0, 0, 0, 0.4);
+	opacity: 0.7;
+	transition: 500ms;
+	transition-timing-function: linear;
+}
+
+.applet-card:hover{
+	opacity: 1;
+	transform: scale(1.1, 1.1);	
+}
+
+.applet-card .property-name{
+	font-size: 1rem;
+	padding: 20px;
+	background: linear-gradient( 70deg, rgb(0, 101, 255, 0.5), rgb(0, 0, 0, 0.1) 99.9%);
+}
+
+.code-container{
+	width: 80%;
+	height: auto;
+	margin: auto;
+	outline: 0px solid gold;
+	padding: 0;
+	margin-top: 30px;
+}
+
+.code-block{
+	font-family: monospace, 'Courier New', Courier;
+	font-size: 14px;
+}
+
+.code-block .selector, .closure{
+	color: rgb(255, 166, 0);
+}
+
+.code-block .rule-sets{
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: rgb(152, 253, 0);
+}
+
+.prop{
+	color: rgb(180, 106, 255);
+}
+
+.val{
+	color: lemonchiffon;
+}
+
+.copy-code, .anim-btn{
+	color: #fff;
+	font-weight: bolder;
+	width: 2em;
+	height: 2em;
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	background-color: #0066FF;
+	box-shadow: 0px 0px 10px 5px  rgb(0, 0, 0, 0.3);
+	border-radius: 50px;
+	border: 3px solid rgb(0, 183, 255);
+	cursor: pointer;
+	font-size: 1.2em;
+	font-style: normal;
+	transition-property: all;
+	transition-duration: 0.7s;
+}
+
+.anim-btn{
+	left: 15px !important; 
+	font-size: 1.2em;
+	width: 7em;
+}
+
+.copy-code i{
+	font-style: normal;
+}
+
+/*.applet-card .copy-code i:hover i:nth-child(2){
+	display: block;
+	transition-delay: 3s;
+
+	TODO ** display 'copied'on button click
+}*/
+
+.copy-code:hover{
+	width: 4em;
+	box-shadow: 0px 0px 10px 1px  rgb(0, 0, 0, 0.6);	
+}
+
+.copied{
+	font-weight: normal !important;
+}
+
+.copy-code, .copied{
+	line-height: 1em;
+	text-align: left;
+	padding-left: 9px;
+}
+
+.copy-code i:nth-child(2){
+	display: none;
+	font-size: 8px;
+}
+
+footer #footer-nav{
+	width: 80%;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+footer #footer-nav a{
+	color: #0066FF;
+	margin-left: 20px;
+}
+
+footer #footer-nav a:nth-child(6){
+	background: rgb(255, 255, 255, 0.1);
+	border-radius:50px;
+	padding: 5px 10px;
+	font-size: 12px;
+	color: rgb(112, 115, 122);
+	text-decoration: #00051C;
+	transition-duration: 200ms;
+}
+
+footer #footer-nav a:nth-child(6):hover{
+	box-shadow: 0px 0px 10px 1px  rgb(0, 0, 0, 0.6);
+}
+
+#nerd-contribute{
+	display: inline-block;
+	position: relative;
+	bottom: -10px;
+	right: -10px;
+	cursor: pointer;
+	background: rgb(255, 255, 255, 0.1);
+	width: 24px;
+	border-radius: 50px;
+	padding: 5px;
+	display: inline-block;
+}
+
+#nerd-contribute:hover{
+	animation: bounce 0.7s infinite;
+}
+
+@keyframes bounce{
+	0%{
+		top: 1;
+	}
+	50%{
+		top: 0;
+	}
+	100%{
+		bottom: -1;
+	}
+}
+
+tooltip{
+	color: white;
+	background-color: black;
+}
